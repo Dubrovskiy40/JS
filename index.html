@@ -4,151 +4,91 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>lesson_2</title>
+   <title>lesson_3</title>
 </head>
 <body>
    <script>
-      /*1. Дан код:
-      var a = 1, b = 1, c, d;
-      c = ++a; alert(c);           // 2 - префиксная форма, сначала увеличивает переменную "а" на 1, а после возвращает значение;
-      d = b++; alert(d);           // 1 - постфиксная форма, сначала возвращает значениепеременной "b", а после увеличивает её на 1;
-      c = (2 + ++a); alert(c);      // 5 - к числу 2 прибавляем значение "a" в префиксной форме, т.е. 3, 2 + 3 = 5;
-      d = (2 + b++); alert(d);      // 4 - к числу 2 прибавляем значение "b" в постфиксной форме, т.е. 2, 2 + 2 = 4;
-      alert(a);                    // 3 - из переменной "с" выведенной в alert() значение "а" равняется 3;
-      alert(b);                    // 3 - из переменной "d" выведенной в alert() значение "b" равняется 3;
-      Почему код даёт именно такие результаты?*/
-
-      /*2. Чему будет равен x в примере ниже?
-
-      var a = 2;
-      var x = 1 + (a *= 2); // x = 5;
-      */
-
-      /*3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
-      если a и b положительные, вывести их разность;
-      если а и b отрицательные, вывести их произведение;
-      если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.*/
-
-      /*var a = +prompt('введите любое число (положительное или отрицательное)');
-      var b = +prompt('введите любое число (положительное или отрицательное)');
-      if (a >= 0 && b >=0) {
-         alert((a - b).toFixed(2));
-      } else if (a < 0 && b < 0) {
-         alert((a * b).toFixed(2));
-      } else if ((a >= 0 && b < 0) 
-      || (a < 0 && b >= 0)) {
-         alert((a + b).toFixed(2));
-      } else {
-         alert('Вы ввели не число');
-      }*/
-
-      /*4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15. Дополнительно, по желанию, реализуйте решение с помощью рекурсивной функции*/
-
-      /*var a = Math.floor(Math.random() * (16 - 0) - 0);
-      switch (a) {
-         case 0 : 
-            console.log(a++);
-         case 1 : 
-            console.log(a++);
-         case 2 : 
-            console.log(a++);
-         case 3 : 
-            console.log(a++);
-         case 4 : 
-            console.log(a++);
-         case 5 : 
-            console.log(a++);
-         case 6 : 
-            console.log(a++);
-         case 7 : 
-            console.log(a++);
-         case 8 : 
-            console.log(a++);
-         case 9 : 
-            console.log(a++);
-         case 10 : 
-            console.log(a++);
-         case 11 : 
-            console.log(a++);
-         case 12 : 
-            console.log(a++);
-         case 13 : 
-            console.log(a++);
-         case 14 : 
-            console.log(a++);
-         case 15 : 
-            console.log(a++);
-      }*/
-
-      //Рекурсивная функция
-      /*var a = Math.floor(Math.random() * (16 - 0) - 0);
-      function rec (a) {
-         if (a == 16) {
-            return;
+      /*1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.*/
+      // Функция, которая проверяет является ли число простым
+      /* var j = 2;   
+      function isPrime(value) {
+         var i = 2;
+         while (i <= value / 2) {
+            if (value % i == 0) {
+               return false;
+            }
+            i++;
          }
-         console.log(a);
-         rec(a + 1);
+         return true;   
       }
-
-      rec(a);*/
-   
-      /*5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
-
-      /*function sumAddition(a, b) {
-         return a + b;
-      }
-
-      function sumSubtraction(a, b) {
-         return a - b;
-      }
-
-      function sumMultiplication(a, b) {
-         return a * b;
-      }
-
-      function sumSeparation(a, b) {
-         return a / b;
-      }*/
-
-
-      /*6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
-      В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).*/
-
-      /*function mathOperation(arg1, arg2, operation) {
-         swith (operation) {
-            case '+':
-               return sumAddition(arg1, arg2);
-               break;
-            case '-':
-               return sumSubtraction(arg1, arg2);
-               break;
-            case '*':
-               return sumMultiplication(arg1, arg2);
-               break;
-            case '/':
-               return sumSeparation(arg1, arg2);
-               break; 
+      while (j <= 100) {
+         if (isPrime(j)) {
+            document.write(j + ' ');
          }
+         j++;
+      } */
+      
+      /* var num = 100;
+      nextNum:
+      for (var i = 2; i <= num; i++) {
+         for (var j = 2; j < (i / 2); j++) {
+            if (i % j == 0) {
+               continue nextNum;
+            }
+         }
+         console.log(i);
+      } */
+      
+      /*2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. 
+      Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.*/
+      
+      /*3. Товары в корзине хранятся в массиве. Задачи:
+      a) Организовать такой массив для хранения товаров в корзине;
+      b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.*/
+      
+      /*var basket = [
+         {
+            title: 'Товар 1',
+            price: 100,
+            count: 1, 
+         },
+         {
+            title: 'Товар 2',
+            price: 200,
+            count: 2, 
+         },
+         {
+            title: 'Товар 3',
+            price: 300,
+            count: 3, 
+         },
+      ]
+      var sum = 0;
+      function countBasketPrice () {
+         for (var item of basket) {
+            sum += item.price * item.count;
+         } console.log('Общая сумма добавленный в корзину товаров, составит: ' + sum + ' рублей');
+      } 
+      countBasketPrice(basket);*/
+
+      /*4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+      for(…){// здесь пусто}*/
+
+      /*for (var i = 0; i <= 10; console.log(i++)) {}*/
+
+      /*5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+      x
+      xx
+      xxx
+      xxxx
+      xxxxx*/
+      
+      /*var cross = '';
+      for (var i = 1; i <= 20; i++) {
+         cross += 'x';
+         console.log(cross);
       }*/
-
-      /*7. Сравнить null и 0. Попробуйте объяснить результат.*/
-
-      /*При сравнении null с числом, null приводится к числу (кроме "=="), т.е. к нулю. Операторы сравнения ">" "<" "==" ">=" "<="
-      null приводится к нулю, поэтому он не может быть больше или меньше нуля - false;
-      ">=" "<=" будет  true т.к. 0 == 0;
-      a вот при нестрогом равенстве "==" будет false т.к. null не приводится к числовому формату.*/
-
-      /*8. С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.*/
-
-      /*function power(val, pow) {
-         if (pow == 1) {
-            return val;
-         } else {
-            return val * power(val, pow - 1);
-         } 
-      }
-      console.log(power(+prompt('Введите число'), +prompt('Введите степень')));*/
-
+      
    </script>
 </body>
 </html>
