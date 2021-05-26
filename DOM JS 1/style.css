@@ -1,0 +1,22 @@
+* {
+   margin: 0;
+   box-sizing: border-box;
+   padding: 0;
+}
+
+.board {
+   width: 800px;
+   height: 800px;
+   outline: 1px solid #000;
+   margin: 50px;
+}
+
+.square {
+   width: 100px;
+   height: 100px;
+   float: left;
+}
+
+.black {
+   background-color: #ccc;
+}
